@@ -15,6 +15,6 @@ public class TesteEmail extends Pessoa{
 
     @Test
     public void testar_email_mais_50_caracteres(){
-        Assert.assertFalse(emailValid("email_teste_muito_longo_nao_deve_ser_valido@dominio.com.br"));
+        Assert.assertEquals( false, emailValid("email_teste_muito_longo_nao_deve_ser_valido@dominio.com.br"));
     }
 }
