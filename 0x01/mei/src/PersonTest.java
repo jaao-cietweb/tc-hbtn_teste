@@ -36,4 +36,9 @@ public class PersonTest {
         pessoa.setPublicServer(false);
         Assertions.assertTrue(pessoa.isMEI());
     }
+
+    @Test
+    public void person_is_not_MEI(){
+        Assertions.assertFalse(pessoa.isMEI());
+    }
 }
