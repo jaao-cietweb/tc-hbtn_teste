@@ -45,7 +45,7 @@ public class PersonTest extends Person {
     }
 
     @ParameterizedTest(name = "A senha {0} contém 8 caracteres?")
-    @ValueSource(strings = {"Abc@123”, “12$@hb"})
+    @ValueSource(strings = {"Abc@123", "12$@hb"})
     public void does_not_have_eight_chars(String valor){
         pessoa.setPassword(valor);
         Assertions.assertFalse(pessoa.checkPassword());
