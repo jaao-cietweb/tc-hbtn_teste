@@ -3,24 +3,12 @@ public class Person {
     String user;
     String password;
 
-    public boolean checkUser(){
-        return user.length() >= 8 && !(user.contains("!@#$%*()"));
+    public boolean checkUser(){ //"^[a-zA-Z0-9]{8,}$"
+        return this.user.matches("^[a-zA-Z0-9]{8,}$");
     }
 
     public boolean checkPassword(){
-        boolean upperCase = false;
-        boolean digit = false;
-        boolean specialChar = false;
-        for (int i = 0; i < password.length(); i++) {
-            if(Character.isUpperCase(password.charAt(i))){
-                upperCase = true;
-            }
-            else if (Character.isDigit(password.charAt(i))){
-                digit = true;
-            }
-        }
-        return upperCase && digit && specialChar &&
-                password.contains("!@#$%*()") && password.length()>=8;
+        return this.password.matches("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$");
     }
 
     public String getUser() {

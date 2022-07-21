@@ -23,7 +23,7 @@ public class PersonTest extends Person {
         Assertions.assertTrue(pessoa.checkUser());
     }
 
-    @ParameterizedTest(name = "O número cliente {0} é invalido?")
+    @ParameterizedTest(name = "O nome do cliente {0} é invalido?")
     @ValueSource(strings = {"Paul#McCartney", "Neil@Arms"})
     public void check_user_not_valid (String valor){
         pessoa.setUser(valor);
